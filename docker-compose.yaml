@@ -2,7 +2,5 @@ version: "3.8"
 services:
     app:
         build: php
-        volumes:
-            - ./php:/app:rw
     ts:
         build: ts
