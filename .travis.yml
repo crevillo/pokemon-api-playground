@@ -1,0 +1,9 @@
+jobs:
+    include:
+        - language: php
+          php: 8.1
+          before_script:
+              - cd php
+              - composer install
+          script:
+              - php vendor/bin/phpunit
