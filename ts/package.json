@@ -1,0 +1,27 @@
+{
+  "name": "ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start:dev": "nodemon",
+    "pokemonsAnalyzer": "tsc && node ./build/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^17.0.32",
+    "axios": "^0.27.2",
+    "reflect-metadata": "^0.1.13",
+    "typedi": "^0.10.0",
+    "typescript": "^4.6.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16",
+    "ts-node": "^10.7.0"
+  }
+}
