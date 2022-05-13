@@ -2,6 +2,8 @@ FROM php:8.1-cli
 
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
+COPY . /app
+
 RUN apt-get update \
     && apt-get install -y git zip unzip zlib1g-dev libzip-dev \
     && apt-get -y autoremove \
