@@ -10,6 +10,7 @@ jobs:
           script: php vendor/bin/phpunit
         - name: "Php CS Fixer"
           language: php
+          php: 8.1
           before_script:
               - cd php
               - composer install
