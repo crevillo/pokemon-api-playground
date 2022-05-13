@@ -29,7 +29,7 @@ class PokemonsFromApiRetriever implements PokemonsRetriever
 
         $items = json_decode($result->getContent())->results;
 
-        $pokemons = array_map(function($item) {
+        $pokemons = array_map(function ($item) {
             $urlParts = explode('/', $item->url);
             $pokemonId = $urlParts[6];
 

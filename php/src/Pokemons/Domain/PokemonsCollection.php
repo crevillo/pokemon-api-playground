@@ -29,7 +29,7 @@ class PokemonsCollection extends \ArrayObject
             'height' => 0
         ];
 
-        array_map(static function($item) use(&$totals) {
+        array_map(static function ($item) use (&$totals) {
             /** @var Pokemon $item */
             $totals['weight'] += $item['weight'];
             $totals['height'] += $item['height'];

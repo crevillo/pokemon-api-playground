@@ -22,7 +22,7 @@ class PokemonFromCacheRetriever implements PokemonRetriever
 
     public function getPokemon(int $pokemonId): array
     {
-        return $this->cache->get(sprintf('pokemon-%d', $pokemonId), function(ItemInterface $item) use($pokemonId) {
+        return $this->cache->get(sprintf('pokemon-%d', $pokemonId), function (ItemInterface $item) use ($pokemonId) {
             $item->expiresAfter(self::CACHE_TTL);
             return $this->pokemonInnerRetriever->getPokemon($pokemonId);
         });
