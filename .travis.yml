@@ -8,4 +8,4 @@ jobs:
               - composer install
           script:
               - php vendor/bin/phpunit
-              - php vendor/bin/php-cs-fixer --dry-run --diff
+              - php vendor/bin/php-cs-fixer fix src --dry-run --diff
