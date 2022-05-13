@@ -13,3 +13,4 @@ RUN docker-php-ext-install zip \
     && docker-php-ext-install bcmath
 
 WORKDIR /app
+RUN composer install
