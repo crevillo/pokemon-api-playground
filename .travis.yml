@@ -8,5 +8,10 @@ jobs:
               - cd php
               - composer install
           script: php vendor/bin/phpunit
-        - script: php vendor/bin/php-cs-fixer fix src --dry-run --diff
-          name: "Php CS Fixer"
+        - name: "Php CS Fixer"
+          language: php
+          before_script:
+              - cd php
+              - composer install
+          script: php vendor/bin/php-cs-fixer fix src --dry-run --diff
+
