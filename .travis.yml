@@ -1,11 +1,11 @@
 jobs:
     include:
         - stage: php
+          name: "Php"
           language: php
           php: 8.1
           before_script:
               - cd php
               - composer install
-          script:
-              - php vendor/bin/phpunit
-              - php vendor/bin/php-cs-fixer fix src --dry-run --diff
+          script: php vendor/bin/phpunit
+        - script: php vendor/bin/php-cs-fixer fix src --dry-run --diff
