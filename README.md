@@ -7,9 +7,9 @@ To tests this, you need to have docker-compose and docker installed.
 
 ### Instructions to test
 
-1.- Clone this repo
-2.- cd to the folder where you have the code
-3.- start containers with `docker-compose up`
+1. Clone this repo
+2. cd to the folder where you have the code
+3. start containers with `docker-compose up`
 
 #### php
 
