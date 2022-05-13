@@ -1,7 +1,7 @@
 jobs:
     include:
-        - stage: php
-          name: "Php"
+        - stage: "Php"
+          name: "Php Unit tests"
           language: php
           php: 8.1
           before_script:
@@ -9,3 +9,4 @@ jobs:
               - composer install
           script: php vendor/bin/phpunit
         - script: php vendor/bin/php-cs-fixer fix src --dry-run --diff
+          name: "Php CS Fixer"
