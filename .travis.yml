@@ -7,3 +7,4 @@ jobs:
               - composer install
           script:
               - php vendor/bin/phpunit
+              - php vendor/bin/php-cs-fixer --dry-run --diff
