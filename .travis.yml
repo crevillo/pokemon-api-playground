@@ -15,4 +15,11 @@ jobs:
               - cd php
               - composer install
           script: php vendor/bin/php-cs-fixer fix src --dry-run --diff
+        - name: "Php CS Fixer"
+          language: php
+          php: 8.1
+          before_script:
+            - cd php
+            - composer install
+          script: php vendor/bin/phpstan analyze src tests --level 5
 

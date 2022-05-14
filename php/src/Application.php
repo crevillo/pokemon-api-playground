@@ -6,7 +6,7 @@ use Symfony\Component\Console\Application as SymfonyApplication;
 
 final class Application extends SymfonyApplication
 {
-    public function __construct(iterable $commands)
+    public function __construct(\Traversable $commands)
     {
         $this->addCommands(\iterator_to_array($commands));
 

@@ -18,6 +18,9 @@ class PokemonsFromApiRetriever implements PokemonsRetriever
         $this->pokemonRetriever = $pokemonRetriever;
     }
 
+    /*
+     * @return array<array<any>>
+     */
     public function getPokemons(int $offset = 0, int $limit = 20): array
     {
         $result = $this->httpClient->request('GET', 'https://pokeapi.co/api/v2/pokemon', [

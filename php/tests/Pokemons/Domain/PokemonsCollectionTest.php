@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 
 class PokemonsCollectionTest extends TestCase
 {
-    public function testWillThrowIfTheNumberOfPokemosIsNotGreaterThanZero()
+    public function testWillThrowIfTheNumberOfPokemosIsNotGreaterThanZero(): void
     {
         $pokemons = new PokemonsCollection([]);
 
@@ -22,7 +22,10 @@ class PokemonsCollectionTest extends TestCase
         $pokemons->averages();
     }
 
-    public function pokemonsDataProvider()
+    /**
+     * @return array<int, array<int, array<int, array<string, int>>|float|int>>
+     */
+    public function pokemonsDataProvider(): array
     {
         $pokemon1 = ['id' => 1, 'weight' => 10, 'height' => 10];
         $pokemon2 = ['id' => 2, 'weight' => 10, 'height' => 10];
@@ -38,8 +41,10 @@ class PokemonsCollectionTest extends TestCase
 
     /**
      * @dataProvider pokemonsDataProvider
+     *
+     * @param array<int,int> $pokemons
      */
-    public function testWillCalculateWeightAndHeightAverages(array $pokemons, float $expectedWeight, float $expectedHeight)
+    public function testWillCalculateWeightAndHeightAverages(array $pokemons, float $expectedWeight, float $expectedHeight): void
     {
         $pokemonsCollection = new PokemonsCollection($pokemons);
         $this->assertEquals($pokemonsCollection->averages()->weight(), $expectedWeight);

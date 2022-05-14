@@ -3,18 +3,18 @@
 namespace App\Pokemons\Infrastructure\Client;
 
 use App\Pokemons\Application\PokemonRetriever;
-use Symfony\Component\Cache\PruneableInterface;
+use Symfony\Contracts\Cache\CacheInterface;
 use Symfony\Contracts\Cache\ItemInterface;
 
 class PokemonFromCacheRetriever implements PokemonRetriever
 {
     private const CACHE_TTL = 1800; // 30 min @todo make this configurable
 
-    private PruneableInterface $cache;
+    private CacheInterface $cache;
 
     private PokemonRetriever $pokemonInnerRetriever;
 
-    public function __construct(PruneableInterface $cache, PokemonRetriever $pokemonRetriever)
+    public function __construct(CacheInterface $cache, PokemonRetriever $pokemonRetriever)
     {
         $this->cache = $cache;
         $this->pokemonInnerRetriever = $pokemonRetriever;

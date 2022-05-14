@@ -12,6 +12,7 @@ use Symfony\Component\Cache\PruneableInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symfony\Component\HttpClient\NativeHttpClient;
+use Symfony\Contracts\Cache\CacheInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use function Symfony\Component\DependencyInjection\Loader\Configurator\tagged_iterator;
 
@@ -38,7 +39,7 @@ return static function (ContainerConfigurator $configurator) {
 
     $services->set('app.cache', FilesystemAdapter::class)
         ->arg('$directory', __DIR__ . '/../var/cache');
-    $services->alias(PruneableInterface::class, 'app.cache');
+    $services->alias(CacheInterface::class, 'app.cache');
 
     $services->get(PokemonFromCacheRetriever::class)
         ->decorate(PokemonFromApiRetriever::class);
